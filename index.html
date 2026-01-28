@@ -1,243 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trendix" - Top 20 Trends Today</title>
+  <meta charset="UTF-8" />
+  <title>Trendix Store – Trendy Items</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-    body { background: linear-gradient(135deg,#ff6ec4,#7873f5); color:#fff; min-height:100vh; }
-    header { text-align:center; padding:30px 20px; background: rgba(0,0,0,0.2); backdrop-filter:blur(10px); }
-    header h1 { font-size:3rem; letter-spacing:2px; margin-bottom:10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.4); }
-    nav a { text-decoration:none; color:#fff; margin:0 10px; font-weight:600; padding:5px 12px; border-radius:8px; transition: all 0.3s ease; }
-    nav a:hover { background: rgba(255,255,255,0.2); color:#000; }
-    main { max-width:1200px; margin:40px auto; display:grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap:25px; padding:0 20px; }
-    .trend-card { background: linear-gradient(145deg,#ff6ec4,#7873f5); border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.3); overflow:hidden; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
-    .trend-card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.5); }
-    .trend-card img { width:100%; height:180px; object-fit:cover; border-bottom:2px solid rgba(255,255,255,0.2); }
-    .trend-card-content { padding:15px; }
-    .trend-card-content h3 { font-size:1.3rem; margin-bottom:8px; text-shadow:1px 1px 2px rgba(0,0,0,0.4); }
-    .trend-card-content p { font-size:0.9rem; margin-bottom:12px; line-height:1.3; }
-    .trend-card-content a { display:inline-block; text-decoration:none; color:#fff; background:#000; padding:8px 14px; border-radius:12px; font-weight:600; transition: all 0.3s ease; }
-    .trend-card-content a:hover { background:#fff; color:#000; }
-    footer { text-align:center; padding:25px 20px; background: rgba(0,0,0,0.2); backdrop-filter:blur(10px); margin-top:50px; font-size:0.9rem; }
-    @media(max-width:500px){ main{grid-template-columns:1fr;} header h1{font-size:2.2rem;} }
+    :root {
+      --green: #16a34a;
+      --dark: #064e3b;
+      --light: #ecfdf5;
+    }
+
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body { margin: 0; background: var(--light); color: #111; }
+
+    header {
+      background: var(--green);
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    header h1 { margin: 0; }
+
+    .container { padding: 25px; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img { width: 100%; border-radius: 10px; }
+
+    .product h3 { margin: 10px 0 5px; }
+
+    .product button {
+      margin-top: auto;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .product button:hover { background: var(--dark); }
+
+    .cart {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--green);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .auth {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    }
+
+    .auth input, .auth textarea, .auth button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .auth button {
+      background: var(--green);
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .note { font-size: 12px; color: #555; }
   </style>
 </head>
 <body>
 
 <header>
- <img src="file:///C:/Users/Nour/Downloads/Trendix%20(1).png" alt="logo6767">
-  <nav>
-    <a href="https://www.tiktok.com/trending">TikTok</a>
-    <a href="https://charts.youtube.com/charts/TrendingVideos/US/RightNow">YouTube</a>
-    <a href="https://trends.google.com/trends/explore">Google Trends</a>
-    <a href="https://reddit.com/r/Trending">Reddit</a>
-  </nav>
+  <h1>🌿 Trendix Store</h1>
+  <div id="userStatus">Not signed in</div>
 </header>
 
-<main>
-  <!-- Trend Cards Start -->
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=2026+Is+the+New+2016" alt="2026 Is the New 2016">
-    <div class="trend-card-content">
-      <h3>2026 Is the New 2016</h3>
-      <p>Nostalgia is taking over! Retro vibes from 2016 are everywhere in style and media.</p>
-      <a href="https://en.wikipedia.org/wiki/2026_is_the_new_2016">Learn More</a>
-    </div>
-  </div>
+<div id="auth" class="auth">
+  <h2>Sign In (Egypt Only)</h2>
+  <input id="email" type="email" placeholder="Email address" />
+  <input id="password" type="password" placeholder="Password" />
+  <input id="phone" placeholder="Phone number (01XXXXXXXXX)" />
+  <textarea id="address" placeholder="Egyptian Address"></textarea>
+  <button onclick="login()">Continue</button>
+  <p class="note">Only Egyptian phone numbers & addresses are accepted.</p>
+</div>
 
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=CEO+of+Trend" alt="CEO of Trend">
-    <div class="trend-card-content">
-      <h3>“CEO of” Caption Trend</h3>
-      <p>The “CEO of …” trend is viral on social media. People crown themselves in hilarious ways.</p>
-      <a href="https://timesofindia.indiatimes.com/etimes/trending">See Trend</a>
+<div id="shop" class="container" style="display:none">
+  <h2>🔥 Trending Right Now</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71vf9-cOq2L._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61gmMq6M4wL._AC_.jpg" />
+      <h3>Pro LED Light 3 Meter Length</h3>
+      <p>170 EGP</p>
+      <button onclick="addToCart('Pro LED Light 3 Meter Length',170)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61c7Q+iTDXL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/71mN9eCXNeL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61tHGNxXoxL._AC_SL1500_.jpg" />
+      <h3>Uootach Wall Clock, 30 cm Modern Silent Wall Clock</h3>
+      <p>435 EGP</p>
+      <button onclick="addToCart('Uootach Wall Clock',435)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/719Lw2XEinL._SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61BNIEFscjL._SL1500_.jpg" />
+      <h3>LENOK USB C Charger Cable 60W type C to type C Cable PD 3.0</h3>
+      <p>140 EGP</p>
+      <button onclick="addToCart('LENOK USB C Charger Cable',140)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/31lD8R8T0HL._AC_.jpg" />
+      <h3>Unisex New York - NY Cap, Black</h3>
+      <p>115 EGP</p>
+      <button onclick="addToCart('Unisex NY Cap',115)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61qX7n3ECSL._AC_SX300_SY300_QL70_ML2_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/8108f8k60QL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/71c33ZRQ2tL._AC_SL1490_.jpg" />
+      <h3>Metal Mesh Desk Organizer - Pen & Paper Holder</h3>
+      <p>139.99 EGP</p>
+      <button onclick="addToCart('Metal Mesh Desk Organizer',139.99)">Add to Cart</button>
     </div>
   </div>
+</div>
 
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Nihilist+Penguin" alt="Nihilist Penguin Meme">
-    <div class="trend-card-content">
-      <h3>Nihilist Penguin Meme</h3>
-      <p>A penguin meme expressing life burnout is going viral across social media platforms.</p>
-      <a href="https://economictimes.indiatimes.com/news">Explore Meme</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Hopecore" alt="Hopecore">
-    <div class="trend-card-content">
-      <h3>#Hopecore</h3>
-      <p>Wellness & positivity aesthetic gaining traction on TikTok.</p>
-      <a href="https://www.tiktok.com/tag/hopecore">Check Trend</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=BookTok" alt="BookTok">
-    <div class="trend-card-content">
-      <h3>#BookTok</h3>
-      <p>Viral community sharing books and recommendations — teens love it!</p>
-      <a href="https://www.tiktok.com/tag/booktok">Explore Books</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Dance+Challenge" alt="TikTok Dance Challenge">
-    <div class="trend-card-content">
-      <h3>TikTok Dance Challenges</h3>
-      <p>New dance challenges dominate social media feeds daily.</p>
-      <a href="https://www.tiktok.com/trending">See Dances</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Sneaker+Trend" alt="Sneaker Trend">
-    <div class="trend-card-content">
-      <h3>2026 Sneaker Trends</h3>
-      <p>Sleek hybrid sneakers defining fashion this year.</p>
-      <a href="https://www.elle.com/fashion/trends">Check Styles</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Windbreaker+Trend" alt="Windbreaker Jacket">
-    <div class="trend-card-content">
-      <h3>Windbreaker Jackets</h3>
-      <p>Sporty + fashion fusion trending globally.</p>
-      <a href="https://www.instyle.com/fashion">See Jackets</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Baggy+Jeans" alt="Baggy Jeans">
-    <div class="trend-card-content">
-      <h3>Baggy Jeans</h3>
-      <p>Comfortable & stylish, still a top fashion trend.</p>
-      <a href="https://www.glamour.com/fashion">Learn More</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Mauve+Palette" alt="Mauve Design Palette">
-    <div class="trend-card-content">
-      <h3>Mauve Palette</h3>
-      <p>Warm neutral tones trending in interiors and aesthetics.</p>
-      <a href="https://www.housebeautiful.com/home-design/colors">Explore Colors</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=TikTokMMD" alt="#tiktokmademebuyit">
-    <div class="trend-card-content">
-      <h3>#TikTokMadeMeBuyIt</h3>
-      <p>Sharing products discovered on TikTok continues to trend.</p>
-      <a href="https://www.tiktok.com/tag/tiktokmademebuyit">Check Products</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=GRWM" alt="Get Ready With Me">
-    <div class="trend-card-content">
-      <h3>GRWM Videos</h3>
-      <p>“Get Ready With Me” routines remain super popular on social media.</p>
-      <a href="https://www.tiktok.com/tag/grwm">Watch Now</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Retro+Hats" alt="Retro Hats">
-    <div class="trend-card-content">
-      <h3>Retro Hats</h3>
-      <p>Vintage-inspired hats are trending in fashion communities.</p>
-      <a href="https://www.pinterest.com/search/pins/trendy-hats">See Styles</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Sustainable+Fashion" alt="Sustainable Fashion">
-    <div class="trend-card-content">
-      <h3>Sustainable Fashion</h3>
-      <p>Eco-friendly & thrifted aesthetics are mainstream this year.</p>
-      <a href="https://www.vogue.com/fashion/sustainable-fashion">Learn More</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=SelfCare" alt="Self-Care Trend">
-    <div class="trend-card-content">
-      <h3>Self-Care & Wellness</h3>
-      <p>Daily wellness & mental health trends continue growing.</p>
-      <a href="https://www.tiktok.com/tag/selfcare">Explore Tips</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=AI+Tech" alt="AI Lifestyle Tech">
-    <div class="trend-card-content">
-      <h3>AI Lifestyle Tech</h3>
-      <p>Smart gadgets & AI tools trending in 2026 tech communities.</p>
-      <a href="https://www.techcrunch.com/tag/ai">Check Tech</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=2010s+Aesthetic" alt="Vintage 2010s Aesthetic">
-    <div class="trend-card-content">
-      <h3>Vintage 2010s Aesthetic</h3>
-      <p>Old school filters & fashion are making a comeback online.</p>
-      <a href="https://www.instagram.com/explore/tags/2010saesthetic">See Aesthetic</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Wearable+Tech" alt="Wearable Tech">
-    <div class="trend-card-content">
-      <h3>Wearable Tech</h3>
-      <p>AI glasses & gadgets are trending among teens and tech enthusiasts.</p>
-      <a href="https://www.cnet.com/topics/wearable-tech">Learn More</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Jewelry+Trend" alt="Statement Jewelry">
-    <div class="trend-card-content">
-      <h3>Statement Jewelry</h3>
-      <p>Layered studs, hoops, and pearls are the fashion hype in 2026.</p>
-      <a href="https://www.vogue.com/fashion/jewelry-trends">Explore Jewelry</a>
-    </div>
-  </div>
-
-  <div class="trend-card">
-    <img src="https://via.placeholder.com/400x180?text=Ice+Cream+Trend" alt="Ice Cream Trend">
-    <div class="trend-card-content">
-      <h3>Ice Cream Culture</h3>
-      <p>Fun frozen treats & home gadgets trending in lifestyle content.</p>
-      <a href="67.html">Trendix Store</a>
-    </div>
-  </div>
-  <!-- Trend Cards End -->
-  <button onclick="openFullscreen()">Go Fullscreen</button>
+<div class="cart" onclick="checkout()">🛒 Cart (<span id="cartCount">0</span>)</div>
 
 <script>
-let elem = document.documentElement;
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
+  let cart = [];
+  let user = null;
+  const OWNER_PHONE = '+966558815841'; // Updated number
+
+  window.onload = function() {
+    const storedUser = localStorage.getItem('trendixUser');
+    if (storedUser) {
+      user = JSON.parse(storedUser);
+      document.getElementById('auth').style.display = 'none';
+      document.getElementById('shop').style.display = 'block';
+      document.getElementById('userStatus').innerText = `Signed in: ${user.phone}`;
+    }
+  };
+
+  function login() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    const egyptPhoneRegex = /^01[0-9]{9}$/;
+
+    if (!email || !password) { alert('Enter email and password'); return; }
+    if (!egyptPhoneRegex.test(phone)) { alert('Invalid Egyptian phone number'); return; }
+    if (address.length < 10) { alert('Please enter a valid Egyptian address'); return; }
+
+    user = { email, password, phone, address };
+    localStorage.setItem('trendixUser', JSON.stringify(user));
+    document.getElementById('auth').style.display = 'none';
+    document.getElementById('shop').style.display = 'block';
+    document.getElementById('userStatus').innerText = `Signed in: ${phone}`;
   }
-}
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    document.getElementById('cartCount').innerText = cart.length;
+  }
+
+  function checkout() {
+    if (!user) return alert('Sign in first');
+    if (cart.length === 0) return alert('Cart is empty');
+
+    let total = cart.reduce((s,i)=>s+i.price,0);
+
+    let message = `New Order – Trendix Store%0A%0A` +
+      `Email: ${user.email}%0A` +
+      `Password: ${user.password}%0A` +
+      `Phone: ${user.phone}%0A` +
+      `Address: ${user.address}%0A%0A` +
+      `Items:%0A` +
+      cart.map(i=>`- ${i.name}: ${i.price} EGP`).join('%0A') +
+      `%0A%0ATotal: ${total} EGP`;
+
+    window.open(`https://wa.me/${OWNER_PHONE}?text=${message}`,'_blank');
+    cart = [];
+    document.getElementById('cartCount').innerText = 0;
+  }
 </script>
-
-</main>
-
-<footer>
-  &copy; 2026 Trendix" | Created by: DSP 🚀
-</footer>
 
 </body>
 </html>
