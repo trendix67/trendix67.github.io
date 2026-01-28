@@ -27,7 +27,7 @@
 <body>
 
 <header>
-  <h1>Trendix"</h1>
+ <img src="file:///C:/Users/Nour/Downloads/Trendix%20(1).png" alt="logo6767">
   <nav>
     <a href="https://www.tiktok.com/trending">TikTok</a>
     <a href="https://charts.youtube.com/charts/TrendingVideos/US/RightNow">YouTube</a>
@@ -214,10 +214,25 @@
     <div class="trend-card-content">
       <h3>Ice Cream Culture</h3>
       <p>Fun frozen treats & home gadgets trending in lifestyle content.</p>
-      <a href="https://www.johnlewis.com/content/gifts/top-2026-trends">Check Trend</a>
+      <a href="67.html">Trendix Store</a>
     </div>
   </div>
   <!-- Trend Cards End -->
+  <button onclick="openFullscreen()">Go Fullscreen</button>
+
+<script>
+let elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
 </main>
 
 <footer>
