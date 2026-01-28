@@ -1,149 +1,228 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Dan Ahmed">
-  <meta name="description" content="This page contains all posted books.">
-  <link rel="icon" href="readinn_logo.jpeg" width=120 length=160 type="image/x-icon">
-  <title>readINN</title>
-</head>
-<body bgcolor=#13435f>
-    <img src=readinn_logo.jpeg width=120 length=160> 
-<center> <h1>readINN</h1> </center><br>
-<br>
-<center>By DSP</center>
-<center>Just Read It</center>
-<br>
-<br>
-<font color =black>
-       <h2>About Us</h2>
-
-<p> ReadInn is a website that features new books every day. You can purchase these books as PDFs. We offer amazing deals each week. We hope you enjoy our selection. Thank you for visiting our site. Created by: DSP.  </p>
-
-<p> <h2> Contact us: </h2>
-	<br>
-    On Whatsapp: +966558815841 <img src="https://files.cdn-files-a.com/uploads/10510923/2000_67fa632504a20.png" width= 150 length=200>
-</p>
-<br>
-   <br>
-   <br>
-   <br>
-   
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #13435f;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2em;
-        }
-
-        form {
-            border: 1px solid #ccc;
-            padding: 1em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            height: 40px;
-            margin-bottom: 20px;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-            height: 40px;
-            background-color: #566b73;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #000000;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendix" - Top 20 Trends Today</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+    body { background: linear-gradient(135deg,#ff6ec4,#7873f5); color:#fff; min-height:100vh; }
+    header { text-align:center; padding:30px 20px; background: rgba(0,0,0,0.2); backdrop-filter:blur(10px); }
+    header h1 { font-size:3rem; letter-spacing:2px; margin-bottom:10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.4); }
+    nav a { text-decoration:none; color:#fff; margin:0 10px; font-weight:600; padding:5px 12px; border-radius:8px; transition: all 0.3s ease; }
+    nav a:hover { background: rgba(255,255,255,0.2); color:#000; }
+    main { max-width:1200px; margin:40px auto; display:grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap:25px; padding:0 20px; }
+    .trend-card { background: linear-gradient(145deg,#ff6ec4,#7873f5); border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.3); overflow:hidden; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+    .trend-card:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.5); }
+    .trend-card img { width:100%; height:180px; object-fit:cover; border-bottom:2px solid rgba(255,255,255,0.2); }
+    .trend-card-content { padding:15px; }
+    .trend-card-content h3 { font-size:1.3rem; margin-bottom:8px; text-shadow:1px 1px 2px rgba(0,0,0,0.4); }
+    .trend-card-content p { font-size:0.9rem; margin-bottom:12px; line-height:1.3; }
+    .trend-card-content a { display:inline-block; text-decoration:none; color:#fff; background:#000; padding:8px 14px; border-radius:12px; font-weight:600; transition: all 0.3s ease; }
+    .trend-card-content a:hover { background:#fff; color:#000; }
+    footer { text-align:center; padding:25px 20px; background: rgba(0,0,0,0.2); backdrop-filter:blur(10px); margin-top:50px; font-size:0.9rem; }
+    @media(max-width:500px){ main{grid-template-columns:1fr;} header h1{font-size:2.2rem;} }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Log In or Sign Up</h1>
-    </header>
-    <main>
-        <form id="registration-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password"><br><br>
-            <input type="submit" value="Register">
-        </form>
-    </main>
-    <script>
-        
-        const registrationForm = document.getElementById('registration-form');
 
-       
-        registrationForm.addEventListener('submit', registerUser);
+<header>
+  <h1>Trendix"</h1>
+  <nav>
+    <a href="https://www.tiktok.com/trending">TikTok</a>
+    <a href="https://charts.youtube.com/charts/TrendingVideos/US/RightNow">YouTube</a>
+    <a href="https://trends.google.com/trends/explore">Google Trends</a>
+    <a href="https://reddit.com/r/Trending">Reddit</a>
+  </nav>
+</header>
 
-       
-        function registerUser(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
+<main>
+  <!-- Trend Cards Start -->
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=2026+Is+the+New+2016" alt="2026 Is the New 2016">
+    <div class="trend-card-content">
+      <h3>2026 Is the New 2016</h3>
+      <p>Nostalgia is taking over! Retro vibes from 2016 are everywhere in style and media.</p>
+      <a href="https://en.wikipedia.org/wiki/2026_is_the_new_2016">Learn More</a>
+    </div>
+  </div>
 
-            
-            if (username === '' || email === '' || password === '' || confirmPassword === '') {
-                alert('Please fill in all fields.');
-                return;
-            }
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=CEO+of+Trend" alt="CEO of Trend">
+    <div class="trend-card-content">
+      <h3>“CEO of” Caption Trend</h3>
+      <p>The “CEO of …” trend is viral on social media. People crown themselves in hilarious ways.</p>
+      <a href="https://timesofindia.indiatimes.com/etimes/trending">See Trend</a>
+    </div>
+  </div>
 
-            if (password !== confirmPassword) {
-                alert('Passwords do not match.');
-                return;
-            }
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Nihilist+Penguin" alt="Nihilist Penguin Meme">
+    <div class="trend-card-content">
+      <h3>Nihilist Penguin Meme</h3>
+      <p>A penguin meme expressing life burnout is going viral across social media platforms.</p>
+      <a href="https://economictimes.indiatimes.com/news">Explore Meme</a>
+    </div>
+  </div>
 
-            
-            window.location.href = 'Error';
-        }
-    </script>
-</body>
-		
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Hopecore" alt="Hopecore">
+    <div class="trend-card-content">
+      <h3>#Hopecore</h3>
+      <p>Wellness & positivity aesthetic gaining traction on TikTok.</p>
+      <a href="https://www.tiktok.com/tag/hopecore">Check Trend</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=BookTok" alt="BookTok">
+    <div class="trend-card-content">
+      <h3>#BookTok</h3>
+      <p>Viral community sharing books and recommendations — teens love it!</p>
+      <a href="https://www.tiktok.com/tag/booktok">Explore Books</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Dance+Challenge" alt="TikTok Dance Challenge">
+    <div class="trend-card-content">
+      <h3>TikTok Dance Challenges</h3>
+      <p>New dance challenges dominate social media feeds daily.</p>
+      <a href="https://www.tiktok.com/trending">See Dances</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Sneaker+Trend" alt="Sneaker Trend">
+    <div class="trend-card-content">
+      <h3>2026 Sneaker Trends</h3>
+      <p>Sleek hybrid sneakers defining fashion this year.</p>
+      <a href="https://www.elle.com/fashion/trends">Check Styles</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Windbreaker+Trend" alt="Windbreaker Jacket">
+    <div class="trend-card-content">
+      <h3>Windbreaker Jackets</h3>
+      <p>Sporty + fashion fusion trending globally.</p>
+      <a href="https://www.instyle.com/fashion">See Jackets</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Baggy+Jeans" alt="Baggy Jeans">
+    <div class="trend-card-content">
+      <h3>Baggy Jeans</h3>
+      <p>Comfortable & stylish, still a top fashion trend.</p>
+      <a href="https://www.glamour.com/fashion">Learn More</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Mauve+Palette" alt="Mauve Design Palette">
+    <div class="trend-card-content">
+      <h3>Mauve Palette</h3>
+      <p>Warm neutral tones trending in interiors and aesthetics.</p>
+      <a href="https://www.housebeautiful.com/home-design/colors">Explore Colors</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=TikTokMMD" alt="#tiktokmademebuyit">
+    <div class="trend-card-content">
+      <h3>#TikTokMadeMeBuyIt</h3>
+      <p>Sharing products discovered on TikTok continues to trend.</p>
+      <a href="https://www.tiktok.com/tag/tiktokmademebuyit">Check Products</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=GRWM" alt="Get Ready With Me">
+    <div class="trend-card-content">
+      <h3>GRWM Videos</h3>
+      <p>“Get Ready With Me” routines remain super popular on social media.</p>
+      <a href="https://www.tiktok.com/tag/grwm">Watch Now</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Retro+Hats" alt="Retro Hats">
+    <div class="trend-card-content">
+      <h3>Retro Hats</h3>
+      <p>Vintage-inspired hats are trending in fashion communities.</p>
+      <a href="https://www.pinterest.com/search/pins/trendy-hats">See Styles</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Sustainable+Fashion" alt="Sustainable Fashion">
+    <div class="trend-card-content">
+      <h3>Sustainable Fashion</h3>
+      <p>Eco-friendly & thrifted aesthetics are mainstream this year.</p>
+      <a href="https://www.vogue.com/fashion/sustainable-fashion">Learn More</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=SelfCare" alt="Self-Care Trend">
+    <div class="trend-card-content">
+      <h3>Self-Care & Wellness</h3>
+      <p>Daily wellness & mental health trends continue growing.</p>
+      <a href="https://www.tiktok.com/tag/selfcare">Explore Tips</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=AI+Tech" alt="AI Lifestyle Tech">
+    <div class="trend-card-content">
+      <h3>AI Lifestyle Tech</h3>
+      <p>Smart gadgets & AI tools trending in 2026 tech communities.</p>
+      <a href="https://www.techcrunch.com/tag/ai">Check Tech</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=2010s+Aesthetic" alt="Vintage 2010s Aesthetic">
+    <div class="trend-card-content">
+      <h3>Vintage 2010s Aesthetic</h3>
+      <p>Old school filters & fashion are making a comeback online.</p>
+      <a href="https://www.instagram.com/explore/tags/2010saesthetic">See Aesthetic</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Wearable+Tech" alt="Wearable Tech">
+    <div class="trend-card-content">
+      <h3>Wearable Tech</h3>
+      <p>AI glasses & gadgets are trending among teens and tech enthusiasts.</p>
+      <a href="https://www.cnet.com/topics/wearable-tech">Learn More</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Jewelry+Trend" alt="Statement Jewelry">
+    <div class="trend-card-content">
+      <h3>Statement Jewelry</h3>
+      <p>Layered studs, hoops, and pearls are the fashion hype in 2026.</p>
+      <a href="https://www.vogue.com/fashion/jewelry-trends">Explore Jewelry</a>
+    </div>
+  </div>
+
+  <div class="trend-card">
+    <img src="https://via.placeholder.com/400x180?text=Ice+Cream+Trend" alt="Ice Cream Trend">
+    <div class="trend-card-content">
+      <h3>Ice Cream Culture</h3>
+      <p>Fun frozen treats & home gadgets trending in lifestyle content.</p>
+      <a href="https://www.johnlewis.com/content/gifts/top-2026-trends">Check Trend</a>
+    </div>
+  </div>
+  <!-- Trend Cards End -->
+</main>
+
 <footer>
-  <font color =black>
-    <p style="font-size:20px;">readINN
-	<br>
-	
-Copyright © 2025
-<br>
- All rights reserved
-<br>
-
-    </p>
+  &copy; 2026 Trendix" | Created by: DSP 🚀
 </footer>
-</html>
 
 </body>
+</html>
