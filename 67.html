@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trendix Store – Trendy Items</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --green: #16a34a;
+      --dark: #064e3b;
+      --light: #ecfdf5;
+    }
+
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body { margin: 0; background: var(--light); color: #111; }
+
+    header {
+      background: var(--green);
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    header h1 { margin: 0; }
+
+    .container { padding: 25px; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img { width: 100%; border-radius: 10px; }
+
+    .product h3 { margin: 10px 0 5px; }
+
+    .product button {
+      margin-top: auto;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .product button:hover { background: var(--dark); }
+
+    .cart {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--green);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    .auth {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    }
+
+    .auth input, .auth textarea, .auth button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .auth button {
+      background: var(--green);
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .note { font-size: 12px; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌿 Trendix Store</h1>
+  <div id="userStatus">Not signed in</div>
+</header>
+
+<div id="auth" class="auth">
+  <h2>Sign In (Egypt Only)</h2>
+  <input id="email" type="email" placeholder="Email address" />
+  <input id="password" type="password" placeholder="Password" />
+  <input id="phone" placeholder="Phone number (01XXXXXXXXX)" />
+  <textarea id="address" placeholder="Egyptian Address"></textarea>
+  <button onclick="login()">Continue</button>
+  <p class="note">Only Egyptian phone numbers & addresses are accepted.</p>
+</div>
+
+<div id="shop" class="container" style="display:none">
+  <h2>🔥 Trending Right Now</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71vf9-cOq2L._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61gmMq6M4wL._AC_.jpg" />
+      <h3>Pro LED Light 3 Meter Length</h3>
+      <p>170 EGP</p>
+      <button onclick="addToCart('Pro LED Light 3 Meter Length',170)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61c7Q+iTDXL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/71mN9eCXNeL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61tHGNxXoxL._AC_SL1500_.jpg" />
+      <h3>Uootach Wall Clock, 30 cm Modern Silent Wall Clock</h3>
+      <p>435 EGP</p>
+      <button onclick="addToCart('Uootach Wall Clock',435)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/719Lw2XEinL._SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/61BNIEFscjL._SL1500_.jpg" />
+      <h3>LENOK USB C Charger Cable 60W type C to type C Cable PD 3.0</h3>
+      <p>140 EGP</p>
+      <button onclick="addToCart('LENOK USB C Charger Cable',140)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/31lD8R8T0HL._AC_.jpg" />
+      <h3>Unisex New York - NY Cap, Black</h3>
+      <p>115 EGP</p>
+      <button onclick="addToCart('Unisex NY Cap',115)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61qX7n3ECSL._AC_SX300_SY300_QL70_ML2_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/8108f8k60QL._AC_SL1500_.jpg" />
+      <img src="https://m.media-amazon.com/images/I/71c33ZRQ2tL._AC_SL1490_.jpg" />
+      <h3>Metal Mesh Desk Organizer - Pen & Paper Holder</h3>
+      <p>139.99 EGP</p>
+      <button onclick="addToCart('Metal Mesh Desk Organizer',139.99)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="cart" onclick="checkout()">🛒 Cart (<span id="cartCount">0</span>)</div>
+
+<script>
+  let cart = [];
+  let user = null;
+  const OWNER_PHONE = '2010558815841';
+
+  window.onload = function() {
+    const storedUser = localStorage.getItem('trendixUser');
+    if (storedUser) {
+      user = JSON.parse(storedUser);
+      document.getElementById('auth').style.display = 'none';
+      document.getElementById('shop').style.display = 'block';
+      document.getElementById('userStatus').innerText = `Signed in: ${user.phone}`;
+    }
+  };
+
+  function login() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    const egyptPhoneRegex = /^01[0-9]{9}$/;
+
+    if (!email || !password) { alert('Enter email and password'); return; }
+    if (!egyptPhoneRegex.test(phone)) { alert('Invalid Egyptian phone number'); return; }
+    if (address.length < 10) { alert('Please enter a valid Egyptian address'); return; }
+
+    user = { email, password, phone, address };
+    localStorage.setItem('trendixUser', JSON.stringify(user));
+    document.getElementById('auth').style.display = 'none';
+    document.getElementById('shop').style.display = 'block';
+    document.getElementById('userStatus').innerText = `Signed in: ${phone}`;
+  }
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    document.getElementById('cartCount').innerText = cart.length;
+  }
+
+  function checkout() {
+    if (!user) return alert('Sign in first');
+    if (cart.length === 0) return alert('Cart is empty');
+
+    let total = cart.reduce((s,i)=>s+i.price,0);
+
+    let message = `New Order – Trendix Store%0A%0A` +
+      `Name/Email: ${user.email}%0A` +
+      `Phone: ${user.phone}%0A` +
+      `Address: ${user.address}%0A%0A` +
+      `Items:%0A` +
+      cart.map(i=>`- ${i.name}: ${i.price} EGP`).join('%0A') +
+      `%0A%0ATotal: ${total} EGP`;
+
+    window.open(`https://wa.me/${OWNER_PHONE}?text=${message}`,'_blank');
+    cart = [];
+    document.getElementById('cartCount').innerText = 0;
+  }
+</script>
+
+</body>
+</html>
